@@ -68,13 +68,14 @@ public class foodcourt extends javax.swing.JFrame {
         qty_menu8 = new javax.swing.JTextField();
         menu8 = new javax.swing.JLabel();
         error = new javax.swing.JLabel();
+        btnReset = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         heading1.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         heading1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        heading1.setText("HAFIDZ FOOD COURT");
+        heading1.setText("HAFIDZ's FOOD COURT");
 
         heading2.setFont(new java.awt.Font("Segoe UI", 1, 26)); // NOI18N
         heading2.setText("DAFTAR MENU");
@@ -99,15 +100,19 @@ public class foodcourt extends javax.swing.JFrame {
 
         sum_menu1.setEditable(false);
         sum_menu1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu1.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         sum_menu2.setEditable(false);
         sum_menu2.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu2.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         sum_menu3.setEditable(false);
         sum_menu3.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu3.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         sum_menu4.setEditable(false);
         sum_menu4.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu4.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         harga_menu5.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         harga_menu5.setText("Rp. 3.000,-");
@@ -123,15 +128,19 @@ public class foodcourt extends javax.swing.JFrame {
 
         sum_menu5.setEditable(false);
         sum_menu5.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu5.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         sum_menu6.setEditable(false);
         sum_menu6.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu6.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         sum_menu7.setEditable(false);
         sum_menu7.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu7.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         sum_menu8.setEditable(false);
         sum_menu8.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        sum_menu8.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         btnCek.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         btnCek.setText("Cek");
@@ -161,6 +170,7 @@ public class foodcourt extends javax.swing.JFrame {
         total_harga.setEditable(false);
         total_harga.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         total_harga.setText("0");
+        total_harga.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         field_pembayaran.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         field_pembayaran.setForeground(new java.awt.Color(153, 153, 153));
@@ -182,6 +192,7 @@ public class foodcourt extends javax.swing.JFrame {
         field_kembalian.setEditable(false);
         field_kembalian.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         field_kembalian.setText("0");
+        field_kembalian.setDisabledTextColor(new java.awt.Color(51, 51, 51));
 
         qty_menu1.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
         qty_menu1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -266,6 +277,14 @@ public class foodcourt extends javax.swing.JFrame {
         error.setFont(new java.awt.Font("Segoe UI", 0, 28)); // NOI18N
         error.setForeground(new java.awt.Color(255, 51, 51));
 
+        btnReset.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -279,9 +298,10 @@ public class foodcourt extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(btnCek)
-                                    .addComponent(btnCount))
+                                    .addComponent(btnCount, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -438,7 +458,9 @@ public class foodcourt extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(field_kembalian, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3)
+                        .addComponent(btnReset)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
@@ -653,6 +675,29 @@ public class foodcourt extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCountActionPerformed
 
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        qty_menu1.setText("");
+        qty_menu2.setText("");
+        qty_menu3.setText("");
+        qty_menu4.setText("");
+        qty_menu5.setText("");
+        qty_menu6.setText("");
+        qty_menu7.setText("");
+        qty_menu8.setText("");
+        sum_menu1.setText("");
+        sum_menu2.setText("");
+        sum_menu3.setText("");
+        sum_menu4.setText("");
+        sum_menu5.setText("");
+        sum_menu6.setText("");
+        sum_menu7.setText("");
+        sum_menu8.setText("");
+        total_harga.setText("0");
+        field_pembayaran.setText("Inputkan uang anda");
+        field_pembayaran.setForeground(new Color(153,153,153));
+        field_kembalian.setText("0");
+    }//GEN-LAST:event_btnResetActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -691,6 +736,7 @@ public class foodcourt extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCek;
     private javax.swing.JButton btnCount;
+    private javax.swing.JButton btnReset;
     private javax.swing.JLabel error;
     private javax.swing.JTextField field_kembalian;
     private javax.swing.JTextField field_pembayaran;
